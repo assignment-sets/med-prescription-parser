@@ -12,3 +12,4 @@ wheels/
 .env
 credentials
 sample_images
+properties.txt
