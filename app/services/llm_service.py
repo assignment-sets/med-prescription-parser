@@ -1,6 +1,10 @@
 from google.genai import types
 from google.genai.client import Client
 from google import genai
+import os 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def get_prescription_details(client: Client, prescription_text: str) -> str:
@@ -33,7 +37,7 @@ def get_prescription_details(client: Client, prescription_text: str) -> str:
         """
 
         response = client.models.generate_content(
-            model="gemini-2.0-flash",
+            model=os.getenv("GEMINI_MODEL"),
             contents=query,
             config=types.GenerateContentConfig(
                 tools=[types.Tool(google_search=types.GoogleSearchRetrieval())]

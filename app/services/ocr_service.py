@@ -8,8 +8,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 SERVICE_ACCOUNT_FILE = os.getenv("SERVICE_ACCOUNT_FILE_PATH")
-SCOPES = ["https://www.googleapis.com/auth/cloud-platform"]
-VISION_API_URL = "https://vision.googleapis.com/v1/images:annotate"
+SCOPES = [os.getenv("GOOGLE_AUTH_SCOPE")]
+VISION_API_URL = os.getenv("VISION_API_URL")
 
 
 def _get_access_token() -> str:

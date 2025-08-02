@@ -9,7 +9,6 @@ wheels/
 # Virtual environments
 .venv
 
+# Secrets
 .env
-credentials
-sample_images
-properties.txt
+credentials/
